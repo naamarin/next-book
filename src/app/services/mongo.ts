@@ -1,3 +1,4 @@
+"use server";
 import { MongoClient, ObjectId } from "mongodb"
 
 export async function connectDatabase() {
@@ -6,13 +7,13 @@ export async function connectDatabase() {
 }
 
 export async function insertDocument(client: any, collection: string, document: object) {
-    const db = client.db('stockflow');
+    const db = client.db('db01');
     const result = await db.collection(collection).insertOne(document);
     return result;
 }
 
 export async function getAllDocuments(client: any, collection: string) {
-    const db = client.db('stockflow');
+    const db = client.db('db01');
     const documents = await db.collection(collection).find().toArray();
     return documents;
 }
