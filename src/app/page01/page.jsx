@@ -1,3 +1,3 @@
-import { getBooks } from '../services/fetchData'
+import { getBooks } from '../../services/books'
 
 
